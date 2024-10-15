@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Testing chat snippet deployment outside SF</h1>
-    <script type='text/javascript'>
+<!--     <script type='text/javascript'>
         function initEmbeddedMessaging() {
             try {
                 embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -25,7 +25,28 @@
             }
         };
     </script>
-    <script type='text/javascript' src='https://rcassino-231207-670-demo.my.site.com/ESWEmbeddedDeploymentfo1723037315488/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript' src='https://rcassino-231207-670-demo.my.site.com/ESWEmbeddedDeploymentfo1723037315488/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script> -->
+
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D7Z0000005OOc',
+				'GoDonate_Web_Chat_Persistent_2',
+				'https://wfporg3--staging.sandbox.my.site.com/ESWGoDonateWebChatPers1726665132941',
+				{
+					scrt2URL: 'https://wfporg3--staging.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://wfporg3--staging.sandbox.my.site.com/ESWGoDonateWebChatPers1726665132941/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
     
 </body>
 </html>
